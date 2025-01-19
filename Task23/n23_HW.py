@@ -5,9 +5,13 @@
     if x == y: return 1
     if x > y: return 0
     if x % 2 == 0:
-        return f(x+1,y) + f(x*1.5,y)
+        return f(x*1.5,y) + f(x+1,y)
+    if x % 2 == 1:
+        return f(x+1,y)
 
 print(f(2,22))'''
+
+#ans:44
 
 #34
 
@@ -55,41 +59,54 @@ print(f(2,25,0))'''
 
 #132
 '''def f(x,y):
-    if int(x) == int(y): return 1
-    if int(x) > int(y): return 0
-    return f(x+1,y) +f(x+"0")'''
+    x = int(x,2)
+    y = int(y,2)
+    if x == y: return 1
+    if x > y: return 0
+    return f(bin(x+1)[2:],bin(y)[2:]) + f(bin(x)[2:]+"0",bin(y)[2:]) + f(bin(x)[2:]+"1",bin(y)[2:])
+
+print(f("101","101110"))'''
+
+#ans:254
+
 
 #119
+'''arr = set([])
+def f(x,c):
+    if c == 8:
+        if 1000 <= x <= 1024:
+            arr.add(x)
+        return 0
+    return f(x+1,c+1) + f(x+5,c+1) + f(x*3,c+1)
 
-'''def f(x,y):
-    if x == y: return 1
-    if x > y: return 0'''
+f(1,0)
+print(len(arr))'''
 
 #148
+'''arr = []
+def f(x,y):
+    if y == 13:
+        arr.append(x)
+        return 0
+    return f(x+3,y+1) + f(x*2 + 1,y+1)
 
-'''def f(x,y):
-    if y == 0: return 0
-    return f(x+3,y-1) + f(x*2 + 1,y-1)
+f(2,0)
+print(len(set(arr)))'''
 
-print(f(2,13))'''
+#ans: 973
 
 #152
 
-'''def f(x, y):
-    def f1(x1, p):
-        if x1 > y:
-            return 0
-        if x1 == y:
-            if (17 in p) + (23 in p) >= 1:
-                return 1
-            return 0
+'''def f(x,y,c1,c2):
+    if x == y and (c1 == 1 or c2 == 1): return 1
+    if x > y: return 0
 
-        return f1(x1 + 1, p + [x1 + 1]) + f1(x1 + 2, p + [x1 + 2])
+    if x == 17: c1=1
+    if x == 23: c2=1
 
-    return f1(x, [x])
+    return f(x+1,y,c1,c2) + f(x+2,y,c1,c2)
 
-
-print(f(11, 29))'''
+print(f(11, 29,0,0))'''
 
 #ans: 3861
 
@@ -108,15 +125,14 @@ print(f(28,10) * f(10,1))'''
 
 #266
 
-def f(x,y):
+'''def f(x,y):
     if x == y: return 1
     if x < y or x == 9 or x == 16: return 0
     return f(x-1,y) + f(x-2,y) + f(x//3,y)
 
-print(f(19,3))
+print(f(19,3))'''
 
 #ans: 180
-
 
 
 #327
