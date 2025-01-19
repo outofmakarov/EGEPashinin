@@ -1,5 +1,5 @@
 #23.3
-def f(x,y):
+'''def f(x,y):
     if x == y:
         return 1
     if x > y or x == 11 or x == 12:
@@ -7,7 +7,7 @@ def f(x,y):
 
     return  f(x+1,y) + f(x+2,y) + f(x*1.5,y)
 
-print(f(2,10) * f(10,22))
+print(f(2,10) * f(10,22))'''
 #ans: 124
 
 #23.4
@@ -43,7 +43,7 @@ print(f2(1,100,0))'''
 print(f(1,16,0))'''
 
 #23.6
-def null(n):
+'''def null(n):
     binN = bin(n)[2:]
     binN = "1" + "0"* (len(binN)-1)
     return binN
@@ -62,7 +62,19 @@ def f(x,y):
     return f(bin(x-1)[2:],bin(y)[2:]) + f(null(x),bin(y)[2:])
 
 
-print(f("1100","100"))
+print(f("1100","100"))'''
 
 #ans:20
 
+#23.8
+
+def f(x,y,c,c11):
+    if x == y and c11 == 1: return 1
+    if x > y or x == 23: return 0
+    if x == 11: c11 = 1
+    if c == 0:
+        return f(x + 1, y, c + 1,c11) + f(x + 2, y, c,c11) + f(x * 2, y, c,c11)
+    else:
+        return f(x+2,y,c,c11) + f(x*2,y,c,c11)
+
+print(f(3,79,0,0))
