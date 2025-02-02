@@ -127,7 +127,7 @@ print(maxL, st,end)'''
 
 #24.8
 
-a = open("C:\\Users\Василий Макаров\\Desktop\\EGEPashinin\\Task24\\task24.8_24.txt")
+'''a = open("C:\\Users\Василий Макаров\\Desktop\\EGEPashinin\\Task24\\task24.8_24.txt")
 a = a.read()
 
 d = {}
@@ -194,24 +194,29 @@ a = a.replace("*","-")
 mx = 0
 for m in re.findall("(([1-9][0-9]*)(-([1-9][0-9]*))*)", a):
     mx = max(mx,len(m[0]))
-print(mx)
+print(mx)'''
 
-#24.11
-
-
-a = open("C:\\Users\Василий Макаров\\Desktop\\EGEPashinin\\Task24\\task24.1_24.txt")
+#24.12
+a = open("C:\\Users\Василий Макаров\\Desktop\\EGEPashinin\\Task24\\task24.12_24.txt")
 a = a.read()
 
-a = "AAAABAFAFB"
+numAF = []
+minL = 2**50
+for i in range(0,len(a)-1):
+    if a[i] == "A" and a[i+1] == "F":
+        numAF.append(i)
 
-a.replace("AF","*")
-c=0
-c1 = 0
-for i in range(0,len(a)):
-    if a[i] == "":
-        c+=1
-        if c > c1:
-            c1 = c
-    else:
-        c=0
-print(c1)
+for j in range(0,len(numAF)-200):
+    st = numAF[j]
+    f = numAF[j+200]
+    l = f - st + 2
+    if l < minL:
+        minL = l
+print(minL)
+
+
+
+
+
+
+
