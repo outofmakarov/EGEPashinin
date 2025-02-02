@@ -184,3 +184,34 @@ for k in c:
 numFL.sort()
 x = x.count(numFL[0])
 print(numFL[0],x)
+
+#24.10
+import re
+
+a = open("C:\\Users\Василий Макаров\\Desktop\\EGEPashinin\\Task24\\task24.10_24.txt")
+a = a.read()
+a = a.replace("*","-")
+mx = 0
+for m in re.findall("(([1-9][0-9]*)(-([1-9][0-9]*))*)", a):
+    mx = max(mx,len(m[0]))
+print(mx)
+
+#24.11
+
+
+a = open("C:\\Users\Василий Макаров\\Desktop\\EGEPashinin\\Task24\\task24.1_24.txt")
+a = a.read()
+
+a = "AAAABAFAFB"
+
+a.replace("AF","*")
+c=0
+c1 = 0
+for i in range(0,len(a)):
+    if a[i] == "":
+        c+=1
+        if c > c1:
+            c1 = c
+    else:
+        c=0
+print(c1)
