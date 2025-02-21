@@ -70,13 +70,6 @@ print(resN)'''
 
 #25.12
 
-def check(n):
-    d = 2
-    while d ** 2 <= n:
-        if n % d == 0:
-            return False
-        d += 1
-    return True
 
 num = [True]*10**7
 num[0] = False
