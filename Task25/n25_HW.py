@@ -145,7 +145,7 @@ print(c)'''
 
 #93
 
-def check(n):
+'''def check(n):
     sN = str(n)
     if len(sN) == 4:
         if int(sN[0]) % 2 != 0 and int(sN[1]) % 2 != 0 and int(sN[2]) % 2 != 0 and int(sN[3]) % 2 != 0:
@@ -162,7 +162,7 @@ for i in range(1686,13277):
     if y == True:
         c += sum(map(int,str(i)))
 
-print(c)
+print(c)'''
 
 #ans: 13950
 
@@ -173,10 +173,55 @@ print(c)
 
 #127
 
+#138
+'''def f(n):
+    num = set()
+    for d in range(int(n**0.5), 1, -1):
+        if n % d == 0:
+            if n//d - d <= 110:
+                num.add((n//d,d))
+            else: break
+
+    return sorted(num)
+
+for i in range(1000000,1500000):
+    y = f(i)
+    if len(y) >= 3:
+        mx = y[-1][0]
+        print(i,mx)'''
+
+#ans: 1113840 1105
+# 1179360 1134
+# 1208844 1148
+# 1422720 1248
+# 1499400 1275
+
+#163
+
+'''for m in range(1,100):
+    for n in range(1,100):
+        if m % 2 == 0  and n % 2 != 0:
+            N = 2 ** m * 5 ** n
+            if N in range(100_000000,300_000_001):
+                res.append((N,m+n))
+print(sorted(res))'''
+#ans: [(125000000, 15), (131072000, 23), (195312500, 13), (204800000, 21)]
 
 
+#249
+'''from fnmatch import fnmatch
+for i in range(161,10**8, 161):
+    if fnmatch(str(i),"12*4?65"):
+        print(i, i // 161)'''
 
+#ans: 1234065 7665
+# 12004965 74565
+# 12214265 75865
+# 12294765 76365
+# 12504065 77665
+# 12584565 78165
+# 12874365 79965
+# 12954865 80465
 
-
-
+#314
 
