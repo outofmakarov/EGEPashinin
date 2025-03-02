@@ -15,6 +15,8 @@ for i in range(190061,190081):
     if len(y) == 4:
 
         print(y)'''
+from fnmatch import fnmatch
+
 # ans:
 # [190061, 6131, 31, 1]
 # [11879, 1697, 7, 1]
@@ -172,6 +174,28 @@ print(c)'''
 #108
 
 #127
+def f(n):
+    res = set()
+
+    for d in range(2,int(n**0.5)+1):
+
+        if n % d == 0:
+            res.add(d)
+            res.add(n//d)
+            if len(res) > 3:
+                break
+
+    return sorted(res)
+
+for i in range(1523467,4157812):
+    y = f(i)
+    if len(y) == 3:
+        print(i, max(y))
+#ans:
+# 1874161 50653
+# 2825761 68921
+# 3418801 79507
+
 
 #138
 '''def f(n):
@@ -214,7 +238,8 @@ for i in range(161,10**8, 161):
     if fnmatch(str(i),"12*4?65"):
         print(i, i // 161)'''
 
-#ans: 1234065 7665
+#ans:
+# 1234065 7665
 # 12004965 74565
 # 12214265 75865
 # 12294765 76365
@@ -224,4 +249,41 @@ for i in range(161,10**8, 161):
 # 12954865 80465
 
 #314
+'''for i in range(0,10**8,1923):
+    if fnmatch(str(i),"1*2??76"):
+        print(i,i//1923)'''
+
+#ans:
+# 10022676 5212
+# 12522576 6512
+# 15022476 7812
+# 17522376 9112
+# 19829976 10312
+
+#335
+'''def check(n):
+    res = set()
+
+    for d in range(2,int(n**0.5) + 1):
+        if n % d == 0:
+            if d % 10 == 9 and d != 9:
+                res.add(d)
+            if n//d % 10 == 9 and n//d != 9:
+                res.add(n//d)
+
+    return sorted(res)
+
+for i in range(800_001,1_000_000):
+    y = check(i)
+
+    if len(y) > 0:
+
+        print(i,min(y))'''
+
+#ans:
+# 800001 309
+# 800003 47059
+# 800004 409
+# 800006 269
+# 800007 39
 
