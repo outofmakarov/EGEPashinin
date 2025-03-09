@@ -54,12 +54,13 @@ print(c,ck)'''
  #ans: 4885 900
 
 #26.10
-'''a = open('task26.10_26.txt')
+a = open('task26.10_26.txt')
 nID = int(a.readline())
 sMo = int(nID * 0.25)
 
 sBad = []
 sCool = []
+
 for line in a:
     num = [int(i) for i in line.split()]
     sID = num[0]
@@ -77,7 +78,7 @@ sLucky = sCool[sMo-1]
 sBad.sort(key= lambda x: (-x[1],x[0]))
 sUnLuck = sBad[0]
 
-print(sLucky[0],sUnLuck[0])'''
+print(sLucky[0],sUnLuck[0])
 
 #ans: 52326 635
 
