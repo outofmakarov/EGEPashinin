@@ -57,3 +57,16 @@ print(c,mN)'''
 
 # 3184429 56263918
 
+#59
+
+
+#90
+a = open("26-90.txt")
+data = a.readline()
+
+num = [int(i) for i in a]
+
+numSort = sorted(num)
+expectedSum = 0
+
+

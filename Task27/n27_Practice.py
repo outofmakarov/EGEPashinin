@@ -105,6 +105,21 @@ print(Px,Py)'''
 #37522.944615707165 51277.95880214987
 
 #27.31
+'''def center(num):
+    sM = 2345678904876198756
+    sPos = 0
+    for x,y in num:
+        sum = 0
+        for x1,y1 in num:
+            l = ((x - x1)**2 + (y-y1)**2)**0.5
+            sum+=l
+
+        if sum < sM:
+            sPos = x,y
+            sM = sum
+
+    return sPos
+
 def dist(n,n1):
     x,y = n
     x1,y1 = n1
@@ -113,7 +128,7 @@ def dist(n,n1):
 
     return l
 
-a = open("task27.31_27-А.txt")
+a = open("task27.31_27-Б.txt")
 data = []
 
 for line in a:
@@ -137,5 +152,138 @@ while data:
 
     clS.append(cl1)
 
-for c in clS:
+
+sumX = 0
+sumY = 0
+for c in clS[:3]:
     print(len(c))
+    cent = center(c)
+    sumX += cent[0]
+    sumY += cent[1]
+    print(center(c))
+
+print(sumX * 100000 // 3,sumY * 100000 // 3)'''
+
+#27.
+'''def center(num):
+    sM = 345678923456789
+    sPos = 0
+    for i in num:
+        sum = 0
+        x,y = i
+        for j in num:
+            x1,y1 = j
+            l = ((y1-y)**2+(x-x1)**2)**0.5
+            sum+=l
+
+        if sum < sM:
+            sM = sum
+            sPos = x,y
+
+    return sPos
+
+def dist(n,n1):
+    x,y = n
+    x1,y1 = n1
+
+    l = ((x - x1)**2 + (y - y1)**2)**0.5
+
+    return l
+
+
+a = open("task27.32_27-А.txt")
+data = []
+
+for line in a:
+    line = line.replace(",",".")
+    x,y = list(map(float,line.split()))
+    data.append((x,y))
+
+clS = []
+while data:
+    cl = []
+    q = [data.pop()]
+    while q:
+        p0 = q.pop()
+        cl.append(p0)
+
+        for p in data:
+            if dist(p0,p) < 0.3:
+                q.append(p)
+                data.remove(p)
+    clS.append(cl)
+
+cl1 = clS[0]
+cl2 = clS[1] + clS[2]
+
+cent1 = center(cl1)
+cent2 = center(cl2)
+
+xP = int((cent1[0] + cent2[0])/2 * 10000)
+yP = int((cent1[1] + cent2[1])/2 * 10000)
+
+print(xP,yP)'''
+#ans 13138 60632
+def center(num):
+    sM = 234567898765432
+    sPos = 0
+    for x,y in num:
+        sum = 0
+        for x1,y1 in num:
+            l = ((y1-y)**2+(x-x1)**2)**0.5
+            sum+=l
+
+        if sum < sM:
+            sM = sum
+            sPos = x,y
+    return sPos
+
+def dist(n,n1):
+    x,y = n
+    x1,y1 = n1
+
+    l = ((y1 - y) ** 2 + (x - x1) ** 2) ** 0.5
+
+    return l
+
+a = open("task27.32_27-Б.txt")
+data = []
+
+for line in a:
+    line = line.replace(',','.')
+    x,y = list(map(float,line.split()))
+    data.append((x,y))
+
+clS = []
+
+while data:
+    cl = []
+    q = [data.pop()]
+    while q:
+        p0 = q.pop()
+        cl.append(p0)
+
+        for p in data:
+            if dist(p0,p) < 0.2:
+                q.append(p)
+                data.remove(p)
+
+    clS.append(cl)
+
+cl1 = clS[0] + clS[-1]
+cl2 = clS[1]
+cl3 = clS[2]
+cl4 = clS[3] + clS[4]
+
+clS = [cl1,cl2,cl3,cl4]
+xP = 0
+yP = 0
+for c in clS:
+    cent = center(c)
+    xP += cent[0]
+    yP += cent[1]
+
+xP = int(xP/4 * 10000)
+yP = int(yP/4 * 10000)
+
+print(xP,yP)
