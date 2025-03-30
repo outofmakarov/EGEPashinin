@@ -100,6 +100,8 @@ Py = ((b+d+f)/3) * 10_000
 
 print(Px,Py)'''
 
+from re import split
+
 #ans:
 #10738.21226546789 30730.076059078103
 #37522.944615707165 51277.95880214987
@@ -224,7 +226,7 @@ yP = int((cent1[1] + cent2[1])/2 * 10000)
 
 print(xP,yP)'''
 #ans 13138 60632
-def center(num):
+'''def center(num):
     sM = 234567898765432
     sPos = 0
     for x,y in num:
@@ -287,3 +289,121 @@ xP = int(xP/4 * 10000)
 yP = int(yP/4 * 10000)
 
 print(xP,yP)
+'''
+#ans: 19014 40843
+
+#27,29
+
+'''def social(n,data):
+    x,y = n
+    c = -1  # убираем себя, как соседа
+    for x1,y1 in data:
+        l = ((x-x1)**2 + (y-y1)**2)**0.5
+        if l <= 0.1:
+            c+=1
+
+    return c >= 14
+
+a = open("task27.29_27-A.txt")
+data = []
+for line in a:
+    x,y = map(float, line.split())
+    data.append((x,y))
+
+cl = [
+    [ [],[],[] ],
+    [ [],[],[] ],
+    [ [],[],[] ]
+    ]
+
+for x,y in data:
+    cl[int(y)][int(x)].append((x,y))
+
+for row in cl:
+    for line in row:
+        print(len(line), end=' ')
+    print()
+    #res = перевёрнутая таблица
+
+cl1 = cl[1][1]
+cl2 = cl[1][2]
+
+cl12Soc = 0
+for x,y in cl1 + cl2:
+    if social((x,y),data):
+        cl12Soc+=1
+
+celCls = len(cl1) + len(cl2)
+K = celCls - cl12Soc
+print(cl12Soc,K)'''
+#ans: 104 453
+
+#27.30
+a = open("task27.30_27-A.txt")
+skip = a.readline()
+data = set()
+#4,5,8
+
+for line in a:
+
+    line = line.split(";")
+    num = line[:]
+
+    num.pop(4)  #-минЗП
+    num.pop(4)  #-максЗП
+
+    stat = True
+
+    for x in num:
+        if x == "":
+            stat = False
+
+    if stat == False:
+        continue
+
+
+    aver = 0
+    minS = line[4]
+    maxS = line[5]
+    lang = line[8]
+
+
+
+    if minS and maxS:
+        minS = int(minS)
+        maxS = int(maxS)
+        if minS > maxS:
+            continue
+        aver = (maxS + minS)/2
+
+    elif maxS:
+        maxS = int(maxS)
+        aver = maxS
+    elif minS:
+        minS = int(minS)
+        aver = minS
+
+    line.append(aver)
+    line = tuple(line)  #переводим из массива в кортеж, т.к. кортеж имеет хэш, требуемый set
+
+    data.add(line)
+
+db = [
+    [],
+    [],
+    [],
+    [],
+    []
+]
+
+
+
+
+
+
+
+
+
+
+
+
