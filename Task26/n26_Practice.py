@@ -54,7 +54,7 @@ print(c,ck)'''
  #ans: 4885 900
 
 #26.10
-a = open('task26.10_26.txt')
+'''a = open('task26.10_26.txt')
 nID = int(a.readline())
 sMo = int(nID * 0.25)
 
@@ -84,7 +84,7 @@ print(sLucky[0],sUnLuck[0])
 
 
 #26.8
-'''a = open("task26.8_26.txt")
+a = open("task26.8_26.txt")
 data = a.readline()
 
 d = {}
@@ -128,9 +128,9 @@ for t in sorted(d.keys()):
             
         t1 = t
 
-print(actMax,duration)'''
+print(actMax,duration)
 
-#ans: 7768 20
+#ans: 7768 20'''
 
 
 
