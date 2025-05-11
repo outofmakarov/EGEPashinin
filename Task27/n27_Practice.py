@@ -6,14 +6,14 @@
     mPos = 0
     for i in range(len(num)):
         x,y = num[i]
-        sum = 0
+        sumAbc = 0
         for j in range(len(num)):
             x1,y1 = num[j]
             l = ((x-x1)**2 + (y - y1)**2)**0.5
-            sum+=l
+            sumAbc+=l
 
-        if sum < mS:
-            mS = sum
+        if sumAbc < mS:
+            mS = sumAbc
             mPos = (x,y)
 
     return mPos
@@ -58,14 +58,14 @@ def center3(num):
     pos = 0
     for i in range(len(num)):
         x,y = num[i]
-        sum = 0
+        sumAbc = 0
         for j in range(len(num)):
             x1,y1 = num[j]
             l = ((x - x1) ** 2 + (y - y1) ** 2) ** 0.5
-            sum+=l
+            sumAbc+=l
 
-        if sum < mSum:
-            mSum = sum
+        if sumAbc < mSum:
+            mSum = sumAbc
             pos = (x,y)
 
     return pos
@@ -111,14 +111,14 @@ from re import split
     sM = 2345678904876198756
     sPos = 0
     for x,y in num:
-        sum = 0
+        sumAbc = 0
         for x1,y1 in num:
             l = ((x - x1)**2 + (y-y1)**2)**0.5
-            sum+=l
+            sumAbc+=l
 
-        if sum < sM:
+        if sumAbc < sM:
             sPos = x,y
-            sM = sum
+            sM = sumAbc
 
     return sPos
 
@@ -171,15 +171,15 @@ print(sumX * 100000 // 3,sumY * 100000 // 3)'''
     sM = 345678923456789
     sPos = 0
     for i in num:
-        sum = 0
+        sumAbc = 0
         x,y = i
         for j in num:
             x1,y1 = j
             l = ((y1-y)**2+(x-x1)**2)**0.5
-            sum+=l
+            sumAbc+=l
 
-        if sum < sM:
-            sM = sum
+        if sumAbc < sM:
+            sM = sumAbc
             sPos = x,y
 
     return sPos
@@ -230,13 +230,13 @@ print(xP,yP)'''
     sM = 234567898765432
     sPos = 0
     for x,y in num:
-        sum = 0
+        sumAbc = 0
         for x1,y1 in num:
             l = ((y1-y)**2+(x-x1)**2)**0.5
-            sum+=l
+            sumAbc+=l
 
-        if sum < sM:
-            sM = sum
+        if sumAbc < sM:
+            sM = sumAbc
             sPos = x,y
     return sPos
 

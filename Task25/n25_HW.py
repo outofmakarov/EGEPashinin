@@ -124,7 +124,7 @@ c = 0
 for i in range(2,30001):
     y = f(i)
 
-    if i > sum(y):
+    if i > sumAbc(y):
         c+=1
 print(c)'''
 
@@ -162,7 +162,7 @@ c= 0
 for i in range(1686,13277):
     y = check(i)
     if y == True:
-        c += sum(map(int,str(i)))
+        c += sumAbc(map(int,str(i)))
 
 print(c)'''
 

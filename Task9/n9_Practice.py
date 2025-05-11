@@ -45,7 +45,7 @@ for line in a:
 
     if res.count(2) == 4 and res.count(1) == 3:
         repSum = 0
-        allSum = sum(line)
+        allSum = sumAbc(line)
 
         for i in range(len(res)):
             if res[i] == 2:
@@ -58,7 +58,7 @@ print(c)'''
 #ans 83
 
 #9.12
-a = open("912")
+'''a = open("912")
 c = 0
 
 for line in a:
@@ -76,6 +76,29 @@ for line in a:
                 nonRepSum += line[i]
         if repSum**2 > nonRepSum**2:
             c+=1
-print(c)
+print(c)'''
 
 #ans 273
+
+a = open("91X")
+c = 0
+
+for line in a:
+    line = line.split()
+    line = [int(i) for i in line]
+    res = [line.count(j) for j in line]
+
+    if res.count(3) == 3 and res.count(1) == 3:
+        repS = 0
+        nonRepS = 0
+
+        for i in range(len(line)):
+            if res[i] == 3:
+                repS += line[i]
+            else:
+                nonRepS += line[i]
+
+        if repS**2 > nonRepS**2:
+            c+=1
+
+print(c)

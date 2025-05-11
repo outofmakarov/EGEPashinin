@@ -67,9 +67,9 @@ for line in a:
     sPo = num[1:]
     if 2 in sPo:
         if sPo.count(2) > 2:
-            sBad.append((sID,sum(sPo)))
+            sBad.append((sID,sumAbc(sPo)))
     else:
-        sPo = sum(num[1:])
+        sPo = sumAbc(num[1:])
         sCool.append((sID,sPo))
 
 sCool.sort(key= lambda x: (-x[1],x[0]))

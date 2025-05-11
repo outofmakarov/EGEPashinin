@@ -21,9 +21,9 @@ for i in range(len(num)):
             a = num[i]
             b = num[j]
             c = num[k]
-            sum = a+b+c
-            if sum % 3 == 0:
-                aver = sum // 3
+            sumAbc = a+b+c
+            if sumAbc % 3 == 0:
+                aver = sumAbc // 3
                 if aver in num:
                     mTh+=1
                     if aver < mN:
@@ -45,10 +45,10 @@ for i in range(len(num)):
     for j in range(i+1, len(num)):
         a = num[i]
         b = num[j]
-        sum = a + b
+        sumAbc = a + b
 
-        if sum % 2 == 0:
-            aver = sum / 2
+        if sumAbc % 2 == 0:
+            aver = sumAbc / 2
             if aver < mid:
                 c+=1
                 if aver > mN:
