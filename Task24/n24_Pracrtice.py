@@ -197,7 +197,7 @@ for m in re.findall("(([1-9][0-9]*)(-([1-9][0-9]*))*)", a):
 print(mx)'''
 
 #24.12
-a = open("C:\\Users\Василий Макаров\\Desktop\\EGEPashinin\\Task24\\task24.12_24.txt")
+'''a = open("C:\\Users\Василий Макаров\\Desktop\\EGEPashinin\\Task24\\task24.12_24.txt")
 a = a.read()
 
 numAF = []
@@ -212,7 +212,7 @@ for j in range(0,len(numAF)-200):
     l = f - st + 2
     if l < minL:
         minL = l
-print(minL)
+print(minL)'''
 
 
 

@@ -69,9 +69,7 @@ for m in range(0,50):
 print(resN)'''
 
 #25.12
-
-
-num = [True]*10**7
+'''num = [True]*10**7
 num[0] = False
 num[1] = False
 c = 0
@@ -86,9 +84,12 @@ for i in range(3_000_000,10**7-2):
         c+=1
         av = (i + i+2) //2
 
-print(c,av)
+print(c,av)'''
 
-
+for i in range(0,10**12,103):
+    n = str(i)
+    if n[0] == 1 and n[2] == 2 and n[3] == 1 and n[4] == 3 and n[5] == 9 and n[-1] == 4:
+        print(i, i/103)
 
 
 
